@@ -1,7 +1,8 @@
 import * as actionTypes from "./actions";
 import axios from "axios";
 
-export const startingServers = () => (dispatch) => {
+export const gettingReport= () => (dispatch) => {
+  
 
 
 
@@ -11,19 +12,8 @@ export const startingServers = () => (dispatch) => {
   };
 };
 
-export const startServers = () => {
+export const getReport = () => {
   return {
     type: actionTypes.START_SERVERS,
-  };
-};
-
-export const stopServers = () => {
-  return {
-    type: actionTypes.REPORT_SERVERS,
-  };
-};
-export const reportServers = () => {
-  return {
-    type: actionTypes.REPORT_SERVERS,
   };
 };

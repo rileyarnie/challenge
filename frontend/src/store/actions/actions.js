@@ -1,3 +1,5 @@
 export const START_SERVERS = "START_SERVERS";
 export const STOP_SERVERS = "STOP_SERVERS";
 export const REPORT_SERVERS = "REPORT_SERVERS";
+
+export const GET_REPORT = "GET_REPORT";
