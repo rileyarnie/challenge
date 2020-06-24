@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+}
+.row {
+  display: -webkit-box;
+  display: flex;
+  background: #ccc;
+  width: 100vw;
+}
+.row:first-child .brick {
+  margin-top: 4px;
+}
+.row:last-child .brick {
+  margin-bottom: 4px;
+}
+.row:nth-child(even) .brick:first-child {
+  display: none;
+}
+.row:nth-child(even) .brick:last-child {
+  margin-right: 2px;
+}
+.row:nth-child(even)::before,
+.row:nth-child(even)::after {
+  position: relative;
+  content: "";
+  background: whitesmoke;
+  width: calc(15% / 2);
+  height: 4vw;
+  border-radius: 2px;
+  margin: 2px;
+  box-shadow: 0 0 19px 1px whitesmoke inset;
+}
+.row:nth-child(even)::before {
+  margin-left: 4px;
+}
+.row:nth-child(even)::after {
+  margin-right: 4px;
+}
+.brick {
+  background: whitesmoke;
+  width: 15%;
+  height: 4vw;
+  border-radius: 2px;
+  margin: 2px;
+  box-shadow: 0 0 19px 1px whitesmoke inset;
+}
+.brick:last-child {
+  margin-right: 4px;
+}
+.brick:first-child {
+  margin-left: 4px;
+}
+
+.test {
+  z-index: 10;
+  align-content: center;
+}
