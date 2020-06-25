@@ -58,11 +58,14 @@ class Main extends Component {
             },
             () => {
               axios
-                .post("http://localhost:5000/api/tracker/start", {
-                  eventName: this.state.method,
-                  message: `${this.state.method} ${this.state.startNumber} SERVERS`,
-                  startTime: this.state.startTime,
-                })
+                .post(
+                  "https://serverchallenge.herokuapp.com/api/tracker/start",
+                  {
+                    eventName: this.state.method,
+                    message: `${this.state.method} ${this.state.startNumber} SERVERS`,
+                    startTime: this.state.startTime,
+                  }
+                )
                 .then((res) => {
                   this.setState({
                     message: `STARTED ${this.state.startNumber} SERVERS`,
@@ -98,11 +101,14 @@ class Main extends Component {
                 },
                 () => {
                   axios
-                    .post("http://localhost:5000/api/tracker/stop", {
-                      eventName: this.state.method,
-                      message: `${this.state.method} ${this.state.stopNumber} SERVERS`,
-                      stopTime: this.state.stopTime,
-                    })
+                    .post(
+                      "https://serverchallenge.herokuapp.com/api/tracker/stop",
+                      {
+                        eventName: this.state.method,
+                        message: `${this.state.method} ${this.state.stopNumber} SERVERS`,
+                        stopTime: this.state.stopTime,
+                      }
+                    )
                     .then((res) => {
                       this.setState({
                         message: `STOPPED ${this.state.stopNumber} SERVERS`,
@@ -134,7 +140,7 @@ class Main extends Component {
         }),
         () => {
           axios
-            .post("http://localhost:5000/api/tracker/log", {
+            .post("https://serverchallenge.herokuapp.com/api/tracker/log", {
               eventName: this.state.method,
               message: `${this.state.method}: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`,
               reportTime: this.state.reportTime,
@@ -174,14 +180,12 @@ class Main extends Component {
         <br></br>
         <hr></hr>
         {this.state.message !== "" ? (
-          <div class="alert alert-info" role="alert">
+          <div className="alert alert-info" role="alert">
             {this.state.message}
           </div>
         ) : (
           ""
         )}
-
-        <h1>{this.state.message}</h1>
       </div>
     );
   }

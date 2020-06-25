@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const gettingReport = () => (dispatch) => {
   axios
-    .get("http://localhost:5000/api/reports")
+    .get("https://serverchallenge.herokuapp.com/api/reports")
     .then((res) => {
       console.log(res.data.reports);
       dispatch(getReport(res.data));

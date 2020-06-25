@@ -26,47 +26,46 @@ class Reports extends Component {
           Get Report
         </button>
 
-        {this.props.reports.length > 0
-          ? (console.log(this.props.reports),
-            (
-              <>
-                <button
-                  className="btn btn-sm btn-outline-secondary mb-3 ml-4"
-                  onClick={this.showReportHandler}
-                >
-                  {this.state.showReport ? "Hide Report" : "Show Report"}
-                </button>
+        {this.props.reports.length > 0 ? (
+          <>
+            <button
+              className="btn btn-sm btn-outline-secondary mb-3 ml-4"
+              onClick={this.showReportHandler}
+            >
+              {this.state.showReport ? "Hide Report" : "Show Report"}
+            </button>
 
-                {this.state.showReport ? (
-                  <>
-                    <h3>A Log of All Processes</h3>
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">Program Time</th>
-                          <th scope="col">Event</th>
-                          <th scope="col">Message</th>
-                          <th scope="col">Actual Time</th>
-                        </tr>
-                      </thead>
-                      {this.props.reports.map((report, index) => (
-                        <tbody>
-                          <tr>
-                            <th scope="row">{report.programTime}</th>
-                            <td>{report.eventName}</td>
-                            <td>{report.message}</td>
-                            <td>{report.actualTime}</td>
-                          </tr>
-                        </tbody>
-                      ))}
-                    </table>
-                  </>
-                ) : (
-                  ""
-                )}
+            {this.state.showReport ? (
+              <>
+                <h3>A Log of All Processes</h3>
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Program Time</th>
+                      <th scope="col">Event</th>
+                      <th scope="col">Message</th>
+                      <th scope="col">Actual Time</th>
+                    </tr>
+                  </thead>
+                  {this.props.reports.map((report, index) => (
+                    <tbody>
+                      <tr key={index}>
+                        <th scope="row">{report.programTime}</th>
+                        <td>{report.eventName}</td>
+                        <td>{report.message}</td>
+                        <td>{report.actualTime}</td>
+                      </tr>
+                    </tbody>
+                  ))}
+                </table>
               </>
-            ))
-          : console.log(this.props.reports)}
+            ) : (
+              ""
+            )}
+          </>
+        ) : (
+          console.log(this.props.reports)
+        )}
       </div>
     );
   }

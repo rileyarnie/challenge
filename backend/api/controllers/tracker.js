@@ -18,8 +18,7 @@ exports.startTrackers = (req, res, next) => {
   });
   report
     .save()
-    .then((result) => { 
-      console.log("Report added successfully");
+    .then((result) => {
       res.status(200).json({ report: result });
     })
     .catch((err) => console.log(err));
@@ -43,7 +42,6 @@ exports.stopTrackers = (req, res, next) => {
   report
     .save()
     .then((result) => {
-      console.log("Report added successfully");
       res.status(200).json({ report: result });
     })
     .catch((err) => console.log(err));
@@ -67,10 +65,7 @@ exports.logTrackers = (req, res, next) => {
   report
     .save()
     .then((result) => {
-      console.log("Report added successfully");
       res.status(200).json({ report: result });
     })
     .catch((err) => console.log(err));
 };
-
-
