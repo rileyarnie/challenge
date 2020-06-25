@@ -67,10 +67,6 @@ class Main extends Component {
                   this.setState({
                     message: `STARTED ${this.state.startNumber} SERVERS`,
                   });
-                  // console.log(
-                  //   res.data,
-                  //   `START ${this.state.startNumber} SERVERS`
-                  // );
                 })
                 .catch((err) => console.log(err));
             }
@@ -111,10 +107,6 @@ class Main extends Component {
                       this.setState({
                         message: `STOPPED ${this.state.stopNumber} SERVERS`,
                       });
-                      // console.log(
-                      //   res.data,
-                      //   `${this.state.method} ${this.state.stopNumber} SERVERS`
-                      // );
                     })
                     .catch((err) => console.log(err));
                 }
@@ -151,10 +143,6 @@ class Main extends Component {
               this.setState({
                 message: `REPORT: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`,
               });
-              // console.log(
-              //   res.data,
-              //   `${this.state.method}: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`
-              // );
             })
             .catch((err) => console.log(err));
         }
@@ -174,9 +162,9 @@ class Main extends Component {
     console.log("getting report");
   };
 
-  // componentDidMount(){
-  //   this.serverHandlers()
-  // }
+  componentDidMount() {
+    this.serverHandlers();
+  }
 
   render() {
     return (
@@ -212,4 +200,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
-
