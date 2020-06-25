@@ -15,6 +15,7 @@ class Main extends Component {
     totalStarted: [0],
     totalStopped: [0],
     totalNumberRunning: 0,
+    message: "",
 
     date: new Date(new Date().setHours(0, 0, 0)),
     seconds: 0,
@@ -62,12 +63,15 @@ class Main extends Component {
                   message: `${this.state.method} ${this.state.startNumber} SERVERS`,
                   startTime: this.state.startTime,
                 })
-                .then((res) =>
-                  console.log(
-                    res.data,
-                    `${this.state.method} ${this.state.startNumber} SERVERS`
-                  )
-                )
+                .then((res) => {
+                  this.setState({
+                    message: `STARTED ${this.state.startNumber} SERVERS`,
+                  });
+                  // console.log(
+                  //   res.data,
+                  //   `START ${this.state.startNumber} SERVERS`
+                  // );
+                })
                 .catch((err) => console.log(err));
             }
           );
@@ -103,12 +107,15 @@ class Main extends Component {
                       message: `${this.state.method} ${this.state.stopNumber} SERVERS`,
                       stopTime: this.state.stopTime,
                     })
-                    .then((res) =>
-                      console.log(
-                        res.data,
-                        `${this.state.method} ${this.state.stopNumber} SERVERS`
-                      )
-                    )
+                    .then((res) => {
+                      this.setState({
+                        message: `STOPPED ${this.state.stopNumber} SERVERS`,
+                      });
+                      // console.log(
+                      //   res.data,
+                      //   `${this.state.method} ${this.state.stopNumber} SERVERS`
+                      // );
+                    })
                     .catch((err) => console.log(err));
                 }
               );
@@ -140,12 +147,15 @@ class Main extends Component {
               message: `${this.state.method}: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`,
               reportTime: this.state.reportTime,
             })
-            .then((res) =>
-              console.log(
-                res.data,
-                `${this.state.method}: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`
-              )
-            )
+            .then((res) => {
+              this.setState({
+                message: `REPORT: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`,
+              });
+              // console.log(
+              //   res.data,
+              //   `${this.state.method}: ${this.state.totalNumberRunning} SERVERS ARE RUNNING`
+              // );
+            })
             .catch((err) => console.log(err));
         }
       );
@@ -164,6 +174,10 @@ class Main extends Component {
     console.log("getting report");
   };
 
+  // componentDidMount(){
+  //   this.serverHandlers()
+  // }
+
   render() {
     return (
       <div className="">
@@ -171,14 +185,15 @@ class Main extends Component {
         <br></br>
         <br></br>
         <hr></hr>
+        {this.state.message !== "" ? (
+          <div class="alert alert-info" role="alert">
+            {this.state.message}
+          </div>
+        ) : (
+          ""
+        )}
 
         <h1>{this.state.message}</h1>
-        {this.state.seconds === 0 ? (
-          <button onClick={this.serverHandlers}>Start</button>
-        ) : (
-          <button disabled>Start</button>
-        )}
-        <button onClick={this.handleReport}>Report</button>
       </div>
     );
   }
@@ -197,3 +212,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
+

@@ -21,6 +21,7 @@ class Reports extends Component {
         <button
           className="btn btn-sm btn-outline-primary mb-3"
           onClick={this.reportHandler}
+          disabled={this.props.reports.length > 0 ? true : false}
         >
           Get Report
         </button>
