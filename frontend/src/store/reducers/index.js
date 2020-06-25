@@ -1,4 +1,4 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actionTypes from "../actions/actions";
 
 const initialState = {
   method: "",
@@ -15,10 +15,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.getReport:
-      return { ...state, reports: action.payload };
+    case actionTypes.GET_REPORT:
+      return { ...state, reports: action.payload};
+    default:
+      return state;
   }
-  return state;
 };
 
 export default reducer;

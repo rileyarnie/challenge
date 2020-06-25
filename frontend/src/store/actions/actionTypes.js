@@ -5,6 +5,7 @@ export const gettingReport = () => (dispatch) => {
   axios
     .get("http://localhost:5000/api/reports")
     .then((res) => {
+      console.log(res.data.reports);
       dispatch(getReport(res.data));
     })
     .catch((err) => console.log(err));
@@ -13,6 +14,6 @@ export const gettingReport = () => (dispatch) => {
 export const getReport = (data) => {
   return {
     type: actionTypes.GET_REPORT,
-    payload: data,
+    payload: data.reports,
   };
 };
