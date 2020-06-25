@@ -1,14 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "EST Api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Arnold Kibira",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -19,5 +19,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
   }
 }
