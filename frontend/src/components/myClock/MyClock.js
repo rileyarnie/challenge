@@ -5,8 +5,10 @@ class MyClock extends Component {
   render() {
     return (
       <>
-        <div className="center">
-          <Clock value={this.props.date} />
+        <div className="container ml-4 mt-4">
+          <div className="">
+            <Clock value={this.props.date} />
+          </div>
         </div>
       </>
     );

@@ -1,3 +1,5 @@
+import * as actionTypes from "../actions/actionTypes";
+
 const initialState = {
   method: "",
   startTime: 0,
@@ -8,11 +10,15 @@ const initialState = {
   totalStarted: [0],
   totalStopped: [0],
   totalNumberRunning: 0,
+  reports: [],
 };
 
-const reducer = (state = initialState, action)=>{
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.getReport:
+      return { ...state, reports: action.payload };
+  }
+  return state;
+};
 
-    return state
-}
-
-export default reducer
+export default reducer;

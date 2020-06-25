@@ -5,7 +5,7 @@ import MyClock from "../myClock/MyClock";
 
 class Wall extends Component {
   state = {
-    number: [0, 1, 2, 3],
+    number: [0, 1, 2, 3,4],
   };
   render() {
     return (

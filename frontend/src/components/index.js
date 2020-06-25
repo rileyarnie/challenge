@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Wall from "./Wall/Wall";
+import { connect } from "react-redux";
+import * as actionTypes from "../store/actions/actionTypes";
 
 class Main extends Component {
   state = {
@@ -157,9 +159,14 @@ class Main extends Component {
     this.reportServerHandler();
   };
 
+  handleReport = () => {
+    this.props.getReport();
+    console.log("getting report");
+  };
+
   render() {
     return (
-      <div className="App">
+      <div className="">
         <Wall date={this.state.date} seconds={this.props.seconds} />
         <br></br>
         <br></br>
@@ -171,16 +178,22 @@ class Main extends Component {
         ) : (
           <button disabled>Start</button>
         )}
-        <button
-          onClick={() => {
-            console.log("Fetch reports");
-          }}
-        >
-          Report
-        </button>
+        <button onClick={this.handleReport}>Report</button>
       </div>
     );
   }
 }
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    reports: state.reports,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getReport: () => dispatch(actionTypes.gettingReport()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
