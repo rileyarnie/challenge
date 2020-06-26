@@ -1,68 +1,124 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Server Tracker
 
-## Available Scripts
+## Description
+This is a web-app allows the user to track the number of virtual servers running. Every time a server starts or stops the number is logged. The user can also get a report for all the events occured as well as the total number of servers still running.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
+The following are required to run this apllication and provided are the downoad links and instructions to install them
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- NodeJS & NPM
+  Link:-> ```https://nodejs.org/en/download/```
+ 
+- MongoDB
+  Link:-> ```https://docs.mongodb.com/manual/installation/```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### or
 
-### `npm run build`
+- Yarn
+  Link:-> ```https://classic.yarnpkg.com/en/docs/install/```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   
+## Setup/Installation Requirements
+*   Install React globally on your machine
+```
+npm install -g create-react-app  
+```
+*   git clone the project to your local machine
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+git clone https://github.com/rileyarnie/challenge.git
+```
+*   cd into the challenge directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+cd challenge
+```
 
-### `npm run eject`
+### Running Backend
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*   cd into the frontend directory
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd backend
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+*   install dependancies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm install
+```
+ ###### or
+ 
+ ```
+Yarn add
+```
+* configure mongoDB by replacing the URI with your own URI
 
-## Learn More
+*   run backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+yarn start
+```
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+### Running Frontend
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+*   cd into the frontend directory
 
-### Making a Progressive Web App
+```
+cd frontend
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+*   install dependancies
 
-### Advanced Configuration
+```
+npm install
+```
+ ###### or
+ 
+ ```
+Yarn add
+```
+ 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+*   run frontend
 
-### Deployment
+```
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
+yarn start
+```
 
-### `npm run build` fails to minify
+## Issues
+* At the moment, the colours on the UI do not change with every new report that is logged.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Author
+Arnold Kibira
+
+### Technologies Used
+* MongoDB
+* Express.js
+* React.js
+* Node.js
+
+
+
+## Licence
+ 
+ [![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)](http://opensource.org/licenses/MIT)
+
+
+ Copyright (c) 2020 ArnoldKibira
+ 
+ 
