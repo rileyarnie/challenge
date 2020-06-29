@@ -29,7 +29,9 @@ exports.startTrackers = (req, res, next) => {
 };
 
 exports.stopTrackers = (req, res, next) => {
-  const actualTime = new Date().toLocaleTimeString();
+  // const actualTime = new Date().toLocaleTimeString();
+  const actualTime = moment().tz("Africa/Nairobi").format("LTS");
+
   const programTime = moment()
     .startOf("day")
     .add(req.body.stopTime, "seconds")
@@ -52,7 +54,9 @@ exports.stopTrackers = (req, res, next) => {
 };
 
 exports.logTrackers = (req, res, next) => {
-  const actualTime = new Date().toLocaleTimeString();
+  // const actualTime = new Date().toLocaleTimeString();
+  const actualTime = moment().tz("Africa/Nairobi").format("LTS");
+
   const programTime = moment()
     .startOf("day")
     .add(req.body.reportTime, "seconds")
