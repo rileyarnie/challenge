@@ -2,7 +2,9 @@ const Report = require("../../models/report");
 const moment = require("moment");
 
 exports.startTrackers = (req, res, next) => {
-  const actualTime = new Date().toLocaleTimeString();
+  const actualTime = new Date().toLocaleTimeString({
+    timeZone: "Africa/Nairobi",
+  });
   const programTime = moment()
     .startOf("day")
     .add(req.body.startTime, "seconds")
