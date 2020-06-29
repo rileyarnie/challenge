@@ -1,10 +1,12 @@
 const Report = require("../../models/report");
 const moment = require("moment");
+const tz = require("moment-timezone");
 
 exports.startTrackers = (req, res, next) => {
-  const actualTime = new Date().toLocaleTimeString({
-    timeZone: "Africa/Nairobi",
-  });
+  // const actualTime = new Date().toLocaleTimeString({
+  //   timeZone: "Africa/Nairobi",
+  // });
+  const actualTime = moment().tz("Africa/Nairobi").format("LTS");
   const programTime = moment()
     .startOf("day")
     .add(req.body.startTime, "seconds")
